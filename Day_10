@@ -1,0 +1,19 @@
+// Day_10 Binary Numbers.
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                int n = scanner.nextInt();
+                scanner.close();
+                String binaryString = Integer.toBinaryString(n);
+                String[] groupsOfOnes = binaryString.split("0");
+                int maxConsecutiveOnes = 0;
+                for (String group : groupsOfOnes) {
+            if (group.length() > maxConsecutiveOnes) {
+                maxConsecutiveOnes = group.length();
+            }
+        }
+        System.out.println(maxConsecutiveOnes);
+    }
+}
